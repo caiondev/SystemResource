@@ -1,10 +1,11 @@
 from PySide6 import QtWidgets, QtCore, QtGui
 import sys
+from interface.floats.diskFloat import disk_float
 
 class Interface(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("My Application")
+        self.setWindowTitle("System Resource Management")
         self.setGeometry(100, 100, 800, 600)
         self.initUI()
 
@@ -18,18 +19,20 @@ class Interface(QtWidgets.QMainWindow):
         h_layout = QtWidgets.QHBoxLayout()
 
         # Add a label
-        label = QtWidgets.QLabel("Hello, World!")
+        label = QtWidgets.QLabel("System Resource Management Interface")
 
         # Add a button
-        button = QtWidgets.QPushButton("Click Me")
-        button.clicked.connect(self.on_button_click)
+        disk_button = QtWidgets.QPushButton("Disk Options")
+        disk_button.clicked.connect(disk_float) #chama a janela
 
         # Set the layout to the central widget
         central_widget.setLayout(v_layout)
 
-    def on_button_click(self):
-        QtWidgets.QMessageBox.information(self, "Information", "Button clicked!")
-
+        #add a label and button to the layout
+        h_layout.addWidget(label)
+        h_layout.addWidget(disk_button)
+        v_layout.addLayout(h_layout)
+        v_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop)
 
     #Application Close Event
     def closeEvent(self, event):
@@ -44,3 +47,5 @@ class Interface(QtWidgets.QMainWindow):
             event.accept()
         else:
             event.ignore()
+
+    
