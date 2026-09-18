@@ -50,7 +50,7 @@ O objetivo do projeto é centralizar, em uma única interface, diversas ferramen
 ## Tecnologias utilizadas
 
 * Python.
-* Tkinter.
+* Tkinter.(Pensando na possibilidade de trocar o Tkinter por QT)
 * PowerShell.
 * Logging.
 * PyInstaller.
