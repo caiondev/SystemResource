@@ -1,6 +1,6 @@
 from PySide6 import QtWidgets, QtCore, QtGui
 import sys
-from interface.floats.diskFloat import disk_float
+from interface.floats import diskFloat, performanceFloat, systemFloat, networkFloat
 
 class Interface(QtWidgets.QMainWindow):
     def __init__(self):
@@ -23,14 +23,27 @@ class Interface(QtWidgets.QMainWindow):
 
         # Add a button
         disk_button = QtWidgets.QPushButton("Disk Options")
-        disk_button.clicked.connect(disk_float) #chama a janela
+        system_button = QtWidgets.QPushButton("System Options")
+        performance_button = QtWidgets.QPushButton("Performance Options")
+        network_button = QtWidgets.QPushButton("Network Options")
+
+
+        # Button functions
+        disk_button.clicked.connect(diskFloat.disk_float) #chama a janela
+        performance_button.clicked.connect(performanceFloat.performance_float)
+        system_button.clicked.connect(systemFloat.system_float)
+        network_button.clicked.connect(networkFloat.network_float)
+
 
         # Set the layout to the central widget
         central_widget.setLayout(v_layout)
 
         #add a label and button to the layout
-        h_layout.addWidget(label)
+        v_layout.addWidget(label)
         h_layout.addWidget(disk_button)
+        h_layout.addWidget(performance_button)
+        h_layout.addWidget(system_button)
+        h_layout.addWidget(network_button)
         v_layout.addLayout(h_layout)
         v_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop)
 
