@@ -29,7 +29,7 @@ class Interface(QtWidgets.QMainWindow):
 
 
         # Button functions
-        disk_button.clicked.connect(diskFloat.disk_float) #chama a janela
+        disk_button.clicked.connect(diskFloat.disk_float)
         performance_button.clicked.connect(performanceFloat.performance_float)
         system_button.clicked.connect(systemFloat.system_float)
         network_button.clicked.connect(networkFloat.network_float)
