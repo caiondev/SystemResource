@@ -23,17 +23,18 @@ def disk_float():
     layout.addWidget(label)
 
     # Add a button
-    optimize_button = QtWidgets.QPushButton("Optimize Disk")
-    optimize_button.clicked.connect(servicos.diskOptions.optimize_disk)
-    layout.addWidget(optimize_button)
-
-    verify_button = QtWidgets.QPushButton("Verify Disk")
-    verify_button.clicked.connect(servicos.diskOptions.verify_disk)
-    layout.addWidget(verify_button)
 
     cleanup_button = QtWidgets.QPushButton("Cleanup Disk")
     cleanup_button.clicked.connect(servicos.diskOptions.cleanup_disk)
     layout.addWidget(cleanup_button)
+
+    optimize_button = QtWidgets.QPushButton("Optimize Disk")
+    optimize_button.clicked.connect(servicos.diskOptions.optimize_disk)
+    layout.addWidget(optimize_button)
+
+    verify_button = QtWidgets.QPushButton("Verify Disk Integrity")
+    verify_button.clicked.connect(servicos.diskOptions.verify_disk)
+    layout.addWidget(verify_button)
 
     # Set the layout to the window
     window.setLayout(layout)

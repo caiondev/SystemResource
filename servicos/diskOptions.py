@@ -41,9 +41,24 @@ def cleanup_disk():
             None,
             "Limpeza",
             "Limpeza concluída com sucesso!"
-            )
-
-    
+        )
 
 
+class dks_verify(QtCore.QThread):
+    ...
 
+class dsk_correction(QtCore.QThread):
+    progress = QtCore.Signal(int)
+
+    def run(self):
+        subprocess.Popen(
+            [
+                "Powershell",
+                "-Command",
+                "DISM /Online /Cleanup-image /RestoreHealth ; sfc /scannow ; echo S | chkdsk c: /f /r /x"
+            ]
+        )
+
+
+
+dsk_correction = dsk_correction()

@@ -14,9 +14,17 @@ def network_float():
     layout.addWidget(label)
 
     # Add a button
-    button = QtWidgets.QPushButton("Manage Network")
-    button.clicked.connect(lambda: QtWidgets.QMessageBox.information(window, "Information", "Network management clicked!"))
-    layout.addWidget(button)
+    one_button = QtWidgets.QPushButton("1 Network")
+    one_button.clicked.connect(lambda: QtWidgets.QMessageBox.information(window, "Information", "Network management clicked!"))
+    layout.addWidget(one_button)
+
+    two_button = QtWidgets.QPushButton("2 Network")
+    two_button.clicked.connect(lambda: QtWidgets.QMessageBox.information(window, "Information", "Network management clicked!"))
+    layout.addWidget(two_button)
+
+    three_button = QtWidgets.QPushButton("3 Network")
+    three_button.clicked.connect(lambda: QtWidgets.QMessageBox.information(window, "Information", "Network management clicked!"))
+    layout.addWidget(three_button)    
 
     # Set the layout to the window
     window.setLayout(layout)
